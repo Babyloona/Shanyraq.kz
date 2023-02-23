@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/22cf143bf2.js" crossorigin="anonymous"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+    <link  rel="stylesheet" href="/css/style.css" >
+</head>
+<body>
+  <!-- navbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar- -->
+  <nav  class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand"style="font-family: 'Montserrat'" href="/">Main</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+      <a class="navbar-brand" style="font-family: 'Montserrat'" href="about">About</a>
+      </li>
+      <li class="nav-item active">
+      <a class="navbar-brand" style="font-family: 'Montserrat'" href="home">Home <i  class='bx bx-home-heart' ></i></a>
+      </li>
+      <li class="nav-item" width="520px">
+      <a class="navbar-brand" width="520px" style="font-family: 'Montserrat'" href="saved">Saved <i class='bx bx-heart' ></i></a>
+      </li>
+      <% if(req.isAuthenticated()){%>
+          <% if (user.role=="admin"){%>
+      <li class="nav-item">
+      <a class="navbar-brand" style="font-family: 'Montserrat'" href="users">Users<i class='bx bx-user-circle' style='color:rgba(0,0,0,0.89)' ></i></a>
+      </li>
+      <%}%>  <%}%>
+    </ul>
+  </div>
+
+
+    <% if(req.isAuthenticated()){%>
+
+      <form  action="/account" method="get">
+        <div style="padding-right:10px;" >
+            <button  type="submit"  style="font-family: 'Montserrat';background-color:#ffd800" class="btn btn-outline-dark"><%=user.username%></button>
+        </div>
+      </form>
+      <form  action="/logout" method="get">
+        <div style="padding-right:10px;" >
+            <button  type="submit"  style="font-family: 'Tahoma'"  class="btn btn-info" ><big><i class='bx bx-log-out'></i></big></button>
+        </div>
+      </form>
+  <%}else{%>
+
+    <form  action="/signIN" method="get">
+      <div style="padding-right:10px;" >
+          <button  type="submit"  style="font-family: 'Tahoma'" class="btn btn-info">Sign in</button>
+      </div>
+    </form>
+
+  <form  action="/registr" method="get">
+    <div  style="padding-right:10px;">
+        <button   type="submit"  style="font-family: 'Tahoma'" class="btn btn-dark">Sign up</button>
+    </div>
+    </form>
+  <%}%>
+
+</nav>
+
+<div class="row">
+  <div class="col" style="text-align:center;"  >
+<h2 style="font-family:Berkshire Swash"><big>Choose your HOME</big></h2><!-- Button trigger modal -->
+<button type="button" class="btn btn-outline-dark"  style=" font-family: 'Roboto', 'sans-serif';" data-toggle="modal" data-target="#exampleModalLong"> <big><i class="fa-solid fa-magnifying-glass"></i></big><big> <big> Search</big></big></button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <!-- /////////////////////////////////////////////////// -->
+        <form  action="/" method="post">
+      <div class="modal-header">
+        <h2 class="modal-title" style="font-family:Berkshire Swash"  id="exampleModalLongTitle">Filter</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+     <div class="modal-body">
+        <div class="row" style="margin:0px 30px 5px 30px">
+              <div class="col">
+            <div class="search_by">
+                <div  class = "search_field">
+                    <label style="font-family: 'Montserrat'">City</label>
+                      <select class="form-control selectpicker" style="padding:0px" name="city">
+                        <option selected="Nur-Sultan">Nur-Sultan</option>
+                        <option selected="Taraz">Taraz</option>
+                        <option value="Almaty">Almaty</option>
+                        <option value="New York">New York</option>
+                        <option value="Canada">Canada</option>
+                          <option value="Paris">Paris</option>
+                            <option value="Oral">Oral</option>
+                    </select>
+                </div>
+                    </div>
+                  </div>
+                <div class="col">
+                  <div class="search-field">
+                      <label style="font-family: 'Montserrat'">How many day?</label>
+                      <input type="text" placeholder="Number of day" class="form-control input-lg search_by_keyword" name="day">
+                  </div>
+                  </div>
+                  <div class="col">
+                    <div class="search-field">
+                      <label style="font-family: 'Montserrat'">Publish date</label>
+                       <input type="date" name="time" placeholder="date" max="2022-12-31" min="2000-01-01" style="border-color:#d3d3d3">
+                    </div>
+                    </div>
+                  </div>
+      </div>
+       <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+        <button type="submit" name="but" value="search" style="background-color:#ff6781;border:none" class="btn btn-info"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+  <hr>
+  </div>
+
+</div>
+<% home.forEach(function(details) { %>
+
+<div class="row" >
+<div class="event-list  col col-11+0.5" style="top:50%; margin:10px 50px 20px 50px"  >
+    <div class="card flex-row">
+
+      <!-- Bootstrap 3 -->
+      <div >
+<div id="carousel" class="carousel slide" data-ride="carousel" style="margin:20px 20px 20px 40px">
+  <!-- Индикаторы -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" >
+    <div class="item active">
+      <img width="400px"  src="/uploads/<%=details.myFile%>" alt="...">
+    </div>
+    <div class="item">
+      <img width="400px"  src="https://images.unsplash.com/photo-1616098851251-6cb03b884052?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&w=1000&q=80" alt="...">
+    </div>
+    <div class="item">
+      <img width="400px" src="/uploads/<%=details.myFile%>" alt="...">
+    </div>
+  </div>
+  <!-- Элементы управления -->
+  <a class="left carousel-control" href="#carousel"  role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Предыдущий</span>
+  </a>
+  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Следующий</span>
+  </a>
+</div>
+      </div>
+   <div class="card-body col-6">
+       <span style="color:green;text-align:center"><%=details.author%></span>
+      <p class="card-text">City:&nbsp<%=details.city%></p>
+      <span >Requirements:&nbsp&nbsp<i><%=details.conditions.substring(0,150);%></i>...</span>
+      <a href="/read/<%=details._id%>/<%=details.city%>">Read more</a>
+      <h4 class="card-title h5 h4-sm">
+
+        <i class="fas fa-caret-right" aria-hidden="true">
+        </i><span>Days:&nbsp&nbsp<%=details.day%> </span>
+        <br><br><br>
+        <i class="fas fa-caret-right" aria-hidden="true">
+        </i><span>Location:&nbsp&nbsp<%=details.location%> </span>
+        <br><br><br>
+        <i class="fas fa-caret-right" aria-hidden="true">
+        </i><span>publication date:&nbsp&nbsp<%=details.time%></span>
+        <br><br><br>
+        <i class="fas fa-caret-right" aria-hidden="true">
+        </i><span>publication time:&nbsp&nbsp<%=details.clock%></span>
+      </h4>
+        <% if(req.isAuthenticated()){%>
+      <form  action="/addcomments/<%=details._id%>" method="post">
+        <textarea style="margin: 20px 0px 0px 0px ; border-style:none; background-color:#7DD1EC; border-radius: 25px;" type="text" name="comments" placeholder="    Comments"></textarea>
+        <button  style=" border-style:none; border-radius: 25px;background-color:#ff6781"  class="btn btn-dark" type="submit" name="button"><i style="font-family: 'Tahoma'"><big><i class='bx bx-send'></i></big></i></button>
+      </form>
+      <%}%>
+      <form  action="/read/<%=details._id%>" method="post">
+        <button type="submit"  style=" border-style:none; border-radius: 25px;" class="btn btn-dark" name="button">Read the comment<big><big><i class='bx bx-comment-detail'></i></big></big></button>
+      </form>
+      <br>
+      <div class="row">
+        <div class="col-6">
+          <% if(req.isAuthenticated()){%>
+        <form  action="/saved/<%=details._id%>/home" method="post">
+          <button type="submit"  style=" border-style:none; border-radius: 25px;" class="btn btn-dark" name="button">Saved<big><big><i class='bx bxs-happy-heart-eyes' style='color:rgba(93,220,246,0.89)' ></i></big></big></button>
+        </form>
+          <%}%>
+        </div>
+        <div class="col-6">
+          <% if(req.isAuthenticated()){%>
+        <% if (user.role=="admin"){%>
+        <form  action="/remove/<%=details._id%>/op" method="post">
+          <button type="submit"  style=" border-style:none; border-radius: 25px; " class="btn btn-outline-danger;float:right" value="delete"name="button"><big><big><i class='bx bx-trash' style='color:rgba(0,0,0,0.89)' ></i></big></big></button>
+        </form>
+          <%}%>  <%}%>
+        </div>
+
+
+          </div>
+    </div>
+
+
+      </div>
+
+  </div>
+</div>
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<%})%>
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+
+</body>
+<div class="container-fluid">
+  <div class="row category"> 
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav mr-auto">
+
+    <li class="nav-item col-lg-3 col-md-3 col-sm-3 col-xs-3 justify-content-center text-center">
+    <a class="navbar-brand" style="font-family: 'Montserrat'" href="about">About</a>
+    </li>
+    <li class="nav-item active col-lg-3 col-md-3 col-sm-3 col-xs-3 justify-content-center text-center">
+    <a class="navbar-brand" style="font-family: 'Montserrat'" href="home">Home <i  class='bx bx-home-heart' ></i></a>
+    </li>
+    <li class="nav-item col-lg-3 col-md-3 col-sm-3 col-xs-3 justify-content-center text-center" width="520px">
+    <a class="navbar-brand" width="520px" style="font-family: 'Montserrat'" href="saved">Saved <i class='bx bx-heart' ></i></a>
+    </li>
+  </ul>
+</div>
+  </div>
+</div>
+<footer>
+        <p style="  margin-top: 30px;">© 2018 Gandalf</p>
+    </footer>
+</html>

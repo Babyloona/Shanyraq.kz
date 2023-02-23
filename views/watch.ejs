@@ -1,0 +1,342 @@
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shanyraq</title>
+  <link rel="stylesheet" href="./owl.carousel.min.css">
+  <link rel="stylesheet" href="./owl.theme.default.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
+    integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+
+</style>
+<body>
+
+  <header class="site-header">
+    <div class="oiu1">
+      <img src="/img/oo.png" alt="">
+    </div>
+    <div class="oiu2">
+      <img src="/img/oo.png" alt="">
+    </div>
+    <div class="oiu3">
+      <img src="/img/oo.png" alt="">
+    </div>
+    <div class="oiu4">
+      <img src="/img/oo.png" alt="">
+    </div>
+    <div class="logo">
+      <a href="film.html"><img src="/img/shanyraq_logo.png" alt="Shanyraq" /></a>
+    </div>
+    <div class="dropdown" style="float:right;">
+      <p style="margin-top: 37px;margin-right:50px;color:antiquewhite "><%=user%><img src="/img/bg.jpg"
+          style="width: 35px;border-radius:50%"></p>
+      <div class="dropdown-content">
+        <a href="liked">Favorites</a>
+        <a href="saved">Watch later</a>
+        <a href="/logout">Log out</a>
+      </div>
+    </div>
+    <ul class="nav justify-content-center">
+      <li class="nav-item" style="margin-left:-650px;margin-top: 28px;">
+        <a href="search"><form action="/search" method="post" class="form">
+          <input class="input" type="text" name="keyword" placeholder="Search by title..." required>
+          <button class="btnsearch" type="submit"></button>
+        </form></a>
+      </li>
+    </ul>
+  </header>
+  <section class="container" style="margin-top: 50px;">
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-3"><img style="width:300px" src="<%=search.img%>"></div>
+      <div class="col-lg-4">
+        <p style="text-align: center;font-size: 20px;color: antiquewhite;"><b><%=search.title%></b></p>
+        <p style="font-size: 15px;text-align: center;color:antiquewhite;">Year:<%=search.year%></p>
+        <p style="font-size: 15px;text-align: center;color:antiquewhite;">Genre:<%=search.genre%></p>
+        <p style="font-size: 15px;text-align: center;color:antiquewhite;">Duration:<%=search.duration%></p>
+        <p style="font-size: 15px; text-align: center;color:antiquewhite;"><%=search.content%></p>
+          <button class="liked">Like <i class="fas fa-thumbs-up"></i></button>
+          <button class="watchlater">Watch Later<img style="width: 25px;" src="/img/sosmed-08-512.webp"></button>
+      </div>
+
+    </div><br>
+    <div class="row">
+      <div class="col-lg-2"></div>
+      <div class="col-lg-7">
+        <video width="853" height="400" controls>
+          <source src="/qozha.mp4" type="video/mp4">
+          <source src="/qozha.mp4" type="video/ogg">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <br>
+    <div>
+      <p></p>
+
+      <div class="row">
+        <div class="col-lg-2"> </div>
+        <div class="col-lg-5">
+          <h1 style="color:#fefefe"><b>See also</b></h1>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-2">
+
+          <a href="/movie">
+            <img src="/img/qash_poster.jpg" alt="Kazakh_Business_in_Korea"
+              style="width:68.5%; justify-content: center;"></a>
+          <p>Qash(2022)</p>
+
+        </div>
+        <div class="col-lg-2">
+          <a href="/movie">
+            <img src="/img/qash_poster.jpg" alt="road_to_mother" style="width:65%"></a>
+          <p>The road to mother (2016)</p>
+
+        </div>
+        <div class="col-lg-2">
+          <a href="/movie">
+            <img src="/img/qash_poster.jpg" alt="tomiris" style="width:65%"></a>
+          <p>Tomiris (2019)</p>
+        </div>
+        <div class="col-lg-2">
+          <a href="/movie">
+            <img src="/img/qash_poster.jpg" alt="sixth post" style="width:69%"></a>
+          <p>Sixth post (2018)</p>
+        </div>
+      </div>
+    </div>
+    <div class="column">
+      <div class="row">
+        <div class="col-lg-2"></div>
+        <div class="col-lg-8">
+          <form>
+            <span> </span>
+           
+              <form  action="/addcomments/<%=search._id%>" method="post">
+            <img src="/img/bg.jpg" style="width: 40px;border-radius:50%;">
+            <textarea rows="1" cols="81" name="comment" form="usrform" placeholder="Leave a comment..."></textarea>
+            <button type="submit" class="submit-button">send</button>
+          </form>
+         
+          <form  action="/read/<%=search._id%>" method="post">
+            <button type="submit"  style=" border-style:none; border-radius: 25px;" class="btn btn-dark" name="button">Read the comment<big><big><i class='bx bx-comment-detail'></i></big></big></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <hr>
+<div class="row">
+  <div class="col-lg-2"></div>
+<div class="col-lg-8 comments">
+  <img src="/img/bg.jpg" style="width: 35px;border-radius:50%;padding-bottom: 5px;"><span style="color: antiquewhite;">&nbsp&nbspUsername &nbsp&nbsp time</span>
+  <p class="c" style="color: antiquewhite;"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp vsgydahusijOKP</p>
+</div>
+</div>
+  </section>
+
+
+  <!-- <div class="container-fluid mt-5">
+    <div class="owl-carousel owl-theme">
+      <div class="item">
+        <p>Comedy</p>
+      </div>
+      <div class="item">
+        <p>Romance</p>
+      </div>
+      <div class="item">
+        <p>Thriller</p>
+      </div>
+      <div class="item">
+        <p>Horror</p>
+      </div>
+      <div class="item">
+        <p>Comedy</p>
+      </div>
+      <div class="item">
+        <p>Romance</p>
+      </div>
+      <div class="item">
+        <p>Thriller</p>
+      </div>
+      <div class="item">
+        <p>Horror</p>
+      </div>
+      <div class="item">
+        <p>Comedy</p>
+      </div>
+      <div class="item">
+        <p>Romance</p>
+      </div>
+      <div class="item">
+        <p>Thriller</p>
+      </div>
+      <div class="item">
+        <p>Horror</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid ">
+    <div class="row">
+      <div class="col-lg-3 col-md-3 col-sm-3"></div>
+      <div class="card col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex align-items-stretch justify-content-center">
+        <div class="row no-gutters">
+
+          <div class="col-4">
+            <img class="float-left" src="/img/qash_poster.jpg">
+          </div>
+          <div class="col-8">
+            <div class="card-body ">
+              <br>
+              <p>Title</p>
+              <p>Year</p>
+              <p>Country</p>
+              <p>Genre</p>
+              <p>Duration</p>
+            </div>
+          </div>
+
+          <div class="col-12 ">
+            <div class="card-body">
+              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-3"></div>
+      <div class="col-lg-3"></div>
+      <div class="card col-lg-6 col-md-6 col-sm-12 d-flex align-items-stretch justify-content-center">
+        <div class="row no-gutters">
+
+          <div class="col-lg-4 col-sm-4">
+            <img class="float-left" src="/img/qash_poster.jpg">
+          </div>
+          <div class="col-lg-8 col-sm-8">
+            <div class="card-body ">
+              <br>
+              <p>Title</p>
+              <p>Year</p>
+              <p>Country</p>
+              <p>Genre</p>
+              <p>Duration</p>
+            </div>
+          </div>
+
+          <div class="col-12 ">
+            <div class="card-body">
+              <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                deserunt mollit anim id est laborum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+
+  <footer class="text-center text-lg-start" style="margin-top: 50px;">
+    <div class="container p-3">
+      <div class="row center">
+        <div class="col-sm-4 col-lg-4">
+          <p style="font-size: 17px;font-family:mont serrat;color: aliceblue;">Shanyraq</p>
+          <p style=" text-decoration: none; font-family:mont serrat;font-size: 17px;color: aliceblue;"> <i
+              class="fa fa-envelope"></i>
+            shanyraq.mail.ru</p>
+          </a>
+        </div>
+
+        <ul>
+          <a style="text-decoration:none;color: #e0316c;font-family:mont serrat;font-size: 18px;"
+            href="https://www.instagram.com/eco_rbk" class="pad"><i class="fab fa-instagram fa-2x"></i></a>
+          <a style="text-decoration:none;color: #6cc1e3;font-family:mont serrat;font-size: 18px;"
+            href="https://tlgg.ru/7075456130" class="pad"><i class="fab fa-telegram fa-2x"></i></a>
+          <a style="text-decoration:none;color: #25d366;font-family:mont serrat;font-size: 18px;"
+            href="https://wa.me/77075456130?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5.%20"
+            class="pad"><i class="fab fa-whatsapp fa-2x"></i></a>
+
+        </ul>
+      </div>
+    </div>
+    </div>
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+      © 2022 Copyright:
+      <a class="text-light" href="#">Shanyraq</a>
+    </div>
+  </footer>
+  <div class="container m-0">
+    <div class="row category ">
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 justify-content-center text-center">
+        <img src="/img/31087.png">
+        <p style="text-align: center;">Films</p>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 justify-content-center text-center">
+        <a href="cartoon.html"><img src="/img/157719.png">
+          <p style="text-align: center;">Cartoons</p>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 justify-content-center text-center">
+        <a href="qyzyq.html"><img src="/img/fire.png">
+          <p style="text-align: center;">Other</p>
+        </a>
+      </div>
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 justify-content-center text-center">
+        <img src="/img/telegram_logo_icon_186924.png">
+        <p style="text-align: center;">Telegram</p>
+      </div>
+    </div>
+
+  </div>
+  <script>
+    $(function () {
+      // Owl Carousel
+      var owl = $(".owl-carousel");
+      owl.owlCarousel({
+        center: false,
+        items: 2,
+        loop: false,
+        margin: 20,
+        dots: false,
+        responsive: {
+          600: {
+            items: 9.5
+          }
+        },
+      });
+    });
+
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+</body>
+
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/22cf143bf2.js" crossorigin="anonymous"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+    
+</head>
+<body>
+  <!-- navbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar- -->
+  <nav  class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand"style="font-family: 'Montserrat'" href="/">Main</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      <a class="navbar-brand" style="font-family: 'Montserrat'" href="home">Home <i  class='bx bx-home-heart' ></i></a>
+      </li>
+      <li class="nav-item" width="520px">
+      <a class="navbar-brand" width="520px" style="font-family: 'Montserrat'" href="saved">Saved <i class='bx bx-heart' ></i></a>
+      </li>
+      <% if(req.isAuthenticated()){%>
+          <% if (user.role=="admin"){%>
+      <li class="nav-item">
+      <a class="navbar-brand" style="font-family: 'Montserrat'" href="users">Users<i class='bx bx-user-circle' style='color:rgba(0,0,0,0.89)' ></i></a>
+      </li>
+      <%}%>  <%}%>
+    </ul>
+  </div>
+    <% if(req.isAuthenticated()){%>
+
+      <form  action="/account" method="get">
+        <div style="padding-right:10px;" >
+            <button  type="submit"  style="font-family: 'Montserrat';background-color:#ffd800" class="btn btn-outline-dark"><%=user.username%></button>
+        </div>
+      </form>
+      <form  action="/logout" method="get">
+        <div style="padding-right:10px;" >
+            <button  type="submit"  style="font-family: 'Tahoma'"  class="btn btn-info" ><big><i class='bx bx-log-out'></i></big></button>
+        </div>
+      </form>
+  <%}else{%>
+
+    <form  action="/signIN" method="get">
+      <div style="padding-right:10px;" >
+          <button  type="submit"  style="font-family: 'Tahoma'" class="btn btn-info">Sign in</button>
+      </div>
+    </form>
+
+  <form  action="/registr" method="get">
+    <div  style="padding-right:10px;">
+        <button   type="submit"  style="font-family: 'Tahoma'" class="btn btn-dark">Sign up</button>
+    </div>
+    </form>
+  <%}%>
+
+</nav>
+
+<h1 style="text-align:center;margin:50px 100px 30px 100px;font-family:monserat; ">FAVORITES</h1>
+<div class = "row">
+<% save.forEach(function(details) { %>
+<div class="col-3 card" style="width: 500px; text-align:center;margin:20px 30px 20px 30px">
+
+<div class="card-body">
+  <img class="card-img" src="/uploads/<%=details.myFile%>" alt="">
+  <h5 style="font-family:'Montserrat';" class="card-title">author:&nbsp<%=details.author%></h5>
+  <hr noshade size="10">
+  <p class="card-text"><%=details.conditions.substring(0,90);%>...</p>
+  <a href="/read/<%=details.teg%>/<%=details.city%>">Read more</a>
+  <form  action="/remove/<%=details._id%>/op" method="post">
+    <button type="submit"  style="border-style:none; border-radius: 25px;float:right;" class="btn btn-outline-danger" value="deleteSave" name="button"><big><big><i class='bx bxs-trash-alt' ></i></big></big></button>
+  </form>
+</div>
+</div>
+<br>
+<%})%>
+</div>
+
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
+</html>

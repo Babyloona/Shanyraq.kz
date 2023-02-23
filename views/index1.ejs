@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+        <header class="site-header">
+            <div class="oiu1">
+                <img src="/img/oo.png" alt="">
+            </div>
+            <div class="oiu2">
+                <img src="/img/oo.png" alt="">
+            </div>
+            <div class="oiu3">
+                <img src="/img/oo.png" alt="">
+            </div>
+            <div class="oiu4">
+                <img src="/img/oo.png" alt="">
+            </div>
+            <div class="logo">
+                <a href="#"><img src="/img/shanyraq_logo.png" alt="Shanyraq" /></a>
+            </div>
+            
+            <div class="dropdown">
+                <button class="dropbtn" for="btnControl">Қазақша</button>
+                <div class="dropdown-content">
+                  <a href="/index2">English</a>
+                </div>
+              </div>
+
+            <button class="btnsign" type="submit" onclick="openForm()">Кіру</button>
+            <!-- The form -->
+         
+              </form>
+            <div class="form-popup" id="myForm">
+                <form action="/signIN" class="form-container" method="post">
+                    <h1>Кіру</h1>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Email жазатын жер" name="username" required>
+
+                    <label for="psw"><b>Құпия сөз</b></label>
+                    <input type="password" placeholder="Құпия сөз жазатын жер" name="password" required>
+
+                    <button type="submit" class="btn">Кіру</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Жабу</button>
+                </form>
+            </div>
+
+        </header>
+            
+
+            <div class="main-part1">
+                <div>
+                    <img src="/img/filmss.png" alt="">
+                </div>
+
+
+                <div class="text1">
+                    <h1>Сүйікті фильмдер, мультфильдер және тағы басқасы тек қазақ тілінде</h1>
+                </div>
+
+                <div class="text2">
+                    <p>Қазақ тілін Shanyraq-пен үйренуге дайынсыз ба? Дайын болсаңыз, тіркелуді ұмытпаңыз.</p>
+                </div>
+
+                <div>
+                    <button class="btnsearch" type="submit" onclick="openFormReg()">Тіркелу</button>
+                </div>
+                <div class="form-popup" id="myFormRegistr">
+                    <form action="/registr" class="form-containerReg" method="post">
+                        <h1>Тіркелу</h1>
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Email жазатын жер" name="username" required>
+    
+                        <label for="psw"><b>Құпия сөз</b></label>
+                        <input type="password" placeholder="Құпия сөз жазатын жер" name="password" required>
+    
+                        <button type="submit" class="btn">Тіркелу</button>
+                        <button type="button" class="btn cancel" onclick="closeFormReg()">Жабу</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <div class="main-part2">
+
+                <img src="/img/tv.png" alt="">
+
+                <div class="text2_1">
+                    <h1>Теледидарда қараңыз</h1>
+                </div>
+
+                <img class="oiu_tv" src="/img/oiu_tv.png" alt="">
+
+                <div class="text2_2">
+                    <p>Сайтқа кіріңіз де үй ішімен немесе достарыңызбен қазақша контенттен рақат алыңыз.</p>
+                </div>
+
+            </div>
+        
+    </div>
+   
+    <script >
+        function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function openFormReg() {
+    document.getElementById("myFormRegistr").style.display = "block";
+  }
+  
+  function closeFormReg() {
+    document.getElementById("myFormRegistr").style.display = "none";
+  }
+    </script>
+</body>
+
+</html>

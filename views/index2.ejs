@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Document</title>
+</head>
+
+<body>
+        <header class="site-header">
+            <div class="oiu1">
+                <img src="/img/oo.png" alt="">
+            </div>
+            <div class="oiu2">
+                <img src="/img/oo.png" alt="">
+            </div>
+            <div class="oiu3">
+                <img src="/img/oo.png" alt="">
+            </div>
+            <div class="oiu4">
+                <img src="/img/oo.png" alt="">
+            </div>
+            <div class="logo">
+                <a href="#"><img src="/img/shanyraq_logo.png" alt="Shanyraq" /></a>
+            </div>
+
+            <div class="dropdown">
+                <button class="dropbtn" for="btnControl">English</button>
+                <div class="dropdown-content">
+                  <a href="/index1">Қазақша</a>
+                </div>
+              </div>
+            
+            <button class="btnsign" type="submit" onclick="openForm()">Sign in</button>
+            <!-- The form -->
+
+
+
+
+            <div class="form-popup" id="myForm">
+                <form action="/signIN" class="form-container" method="post">
+                    <h1>Sign in</h1>
+
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" placeholder="Place for email" name="username" required>
+
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Place for password" name="password" required>
+
+                    <button type="submit" class="btn">Sign in</button>
+                    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+            </div>
+
+        </header>
+        
+        
+       
+            
+            <div class="main-part1">
+                <div>
+                    <img src="/img/filmss.png" alt="">
+                </div>
+
+
+                <div class="text1">
+                    <h1>Favourite films, cartoons and many content in Kazakh language</h1>
+                </div>
+
+                <div class="text2">
+                    <p>Are you ready to learn Kazakh with Shanyraq? If yes, do not forget to register.</p>
+                </div>
+
+                <div>
+                    <button class="btnsearch" type="submit" onclick="openFormReg()">Register</button>
+                </div>
+                <div class="form-popup" id="myFormRegistr" >
+                    <form action="/registr" class="form-containerReg" method="post">
+                        <h1>Register</h1>
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Place for your email" name="username" required>
+    
+                        <label for="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Place for your password" name="password" required>
+    
+                        <button type="submit" class="btn">Register</button>
+                        <button type="button" class="btn cancel" onclick="closeFormReg()">Close</button>
+                    </form>
+                </div>
+            </div>
+
+
+
+            <div class="main-part2">
+
+                <img src="/img/tv.png" alt="">
+
+                <div class="text2_1">
+                    <h1>Watch on TV</h1>
+                </div>
+
+                <img class="oiu_tv" src="/img/oiu_tv.png" alt="">
+
+                <div class="text2_2">
+                    <p>Sign in and enjoy Kazakh content with your family or friends.</p>
+                </div>
+
+            </div>
+
+    <script >
+        function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function openFormReg() {
+    document.getElementById("myFormRegistr").style.display = "block";
+  }
+  
+  function closeFormReg() {
+    document.getElementById("myFormRegistr").style.display = "none";
+  }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <script src="https://kit.fontawesome.com/22cf143bf2.js" crossorigin="anonymous"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+    <link  rel="stylesheet" href="/css/style.css" >
+</head>
+<body>
+  <!-- navbaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaar- -->
+  <nav  class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand"style="font-family: 'Montserrat'" href="/">Main</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+      <a class="navbar-brand" style="font-family: 'Montserrat'" href="home">Home <i  class='bx bx-home-heart' ></i></a>
+      </li>
+      <li class="nav-item" width="520px">
+      <a class="navbar-brand" width="520px" style="font-family: 'Montserrat'" href="saved">Saved <i class='bx bx-heart' ></i></a>
+      </li>
+      <% if(req.isAuthenticated()){%>
+          <% if (user.role=="admin"){%>
+      <li class="nav-item">
+      <a class="navbar-brand" style="font-family: 'Montserrat'" href="users">Users<i class='bx bx-user-circle' style='color:rgba(0,0,0,0.89)' ></i></a>
+      </li>
+      <%}%>  <%}%>
+    </ul>
+  </div>
+
+
+    <% if(req.isAuthenticated()){%>
+
+      <form  action="/account" method="get">
+        <div style="padding-right:10px;" >
+            <button  type="submit"  style="font-family: 'Montserrat';background-color:#ffd800" class="btn btn-outline-dark"><%=user.username%></button>
+        </div>
+      </form>
+      <form  action="/logout" method="get">
+        <div style="padding-right:10px;" >
+            <button  type="submit"  style="font-family: 'Tahoma'"  class="btn btn-info" ><big><i class='bx bx-log-out'></i></big></button>
+        </div>
+      </form>
+  <%}else{%>
+
+    <form  action="/signIN" method="get">
+      <div style="padding-right:10px;" >
+          <button  type="submit"  style="font-family: 'Tahoma'" class="btn btn-info">Sign in</button>
+      </div>
+    </form>
+
+  <form  action="/registr" method="get">
+    <div  style="padding-right:10px;">
+        <button   type="submit"  style="font-family: 'Tahoma'" class="btn btn-dark">Sign up</button>
+    </div>
+    </form>
+  <%}%>
+
+</nav>
+<div class="row">
+  <div class="col" style="text-align:center;"  >
+
+      <h2  style="font-family:Berkshire Swash"><big>Add FILM</big></h2>
+      <form  action="/addfilms" method="get">
+      <button   type="submit" class="btn btn-outline-dark"  style=" font-family: 'Roboto', 'sans-serif';" data-toggle="modal" data-target="#exampleModalLong"><big> <big><i height="1000px" class='bx bx-cart-add' ></i></big></big><big> <big>Add</big></big></button>
+      </form>
+
+     <hr>
+  </div>
+
+</div>
+
+
+
+</div>
+<% home.forEach(function(details) { %>
+<div class="row" >
+<div class="event-list  col col-11+0.5" style="top:50%; margin:10px 50px 5px 50px"  >
+    <div class="card flex-row">
+
+      <!-- Bootstrap 3 -->
+      <div >
+<div id="carousel" class="carousel slide" data-ride="carousel" style="margin:20px 20px 20px 40px">
+  <!-- Индикаторы -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel" data-slide-to="1"></li>
+    <li data-target="#carousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner" >
+    <div class="item active">
+      <img width="400px" src="/uploads/<%=details.myFile%>" alt="...">
+    </div>
+    <div class="item">
+      <img width="400px" src="https://images.unsplash.com/photo-1616098851251-6cb03b884052?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDE0fHx8ZW58MHx8fHw%3D&w=1000&q=80" alt="...">
+    </div>
+    <div class="item">
+      <img width="400px" src="/uploads/<%=details.myFile%>" alt="...">
+    </div>
+  </div>
+  <!-- Элементы управления -->
+  <a class="left carousel-control" href="#carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Предыдущий</span>
+  </a>
+  <a class="right carousel-control" href="#carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Следующий</span>
+  </a>
+</div>
+      </div>
+   <div class="card-body col-6">
+       <span style="color:green;text-align:center"><%=details.author%></span>
+      <p class="card-text">City:&nbsp<%=details.city%></p>
+      <span >Requirements:&nbsp&nbsp<i><%=details.conditions.substring(0,150);%></i></span>
+      <a href="/read/<%=details._id%>/<%=details.city%>">Read more</a>
+      <h4 class="card-title h5 h4-sm">
+
+        <i class="fas fa-caret-right" aria-hidden="true">
+        </i><span>Days:&nbsp&nbsp<%=details.day%> </span>
+        <br><br><br>
+        <i class="fas fa-caret-right" aria-hidden="true">
+        </i><span>Location:&nbsp&nbsp<%=details.location%> </span>
+        <br><br><br>
+        <i class="fas fa-caret-right" aria-hidden="true">
+        </i><span>publication date:&nbsp&nbsp<%=details.time%></span>
+        <br><br><br>
+        <i class="fas fa-caret-right" aria-hidden="true">
+        </i><span>publication time:&nbsp&nbsp<%=details.clock%></span>
+      </h4>
+      <ul class="nav justify-content">
+        <li class="nav-item">
+          <form  action="/ubdate/<%=details._id%>/op" method="post">
+            <button type="submit"  style=" border-style:none; border-radius: 25px;" class="btn btn-success" value="edit" name="button">Edit <big><big><i class='bx bxs-edit' ></i></big></big></i></button>
+          </form>
+        </li>
+        <li  class="nav-item">
+          <form  action="/remove/<%=details._id%>/op" method="post">
+            <button type="submit"  style=" border-style:none; border-radius: 25px;" class="btn btn-outline-danger" value="delete"name="button">Remove <big><big><i class='bx bxs-trash-alt' ></i></big></big></i></button>
+          </form>
+        </li>
+      </ul>
+
+
+    </div>
+
+
+      </div>
+
+  </div>
+</div>
+<%})%>
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+<link href='https://fonts.googleapis.com/css?family=Berkshire Swash' rel='stylesheet'>
+<link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</body>
