@@ -1,4 +1,4 @@
-##finall Project 
+finall Project 
 # Shanyraq.kz
 
 The main goal
